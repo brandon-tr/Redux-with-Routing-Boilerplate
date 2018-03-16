@@ -7,9 +7,18 @@ import { returnHi } from "./redux/actions/actions";
 import { Route, Link, withRouter } from "react-router-dom";
 import Home from "./components/home";
 import Page2 from "./components/page2";
+import axios from "axios";
 
 class App extends Component {
   render() {
+    axios
+      .get("/testApi")
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
     return (
       <div className="App">
         <header className="App-header">
